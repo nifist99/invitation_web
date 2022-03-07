@@ -24,13 +24,13 @@
                 <div class="email">
                   <i class="bi bi-envelope"></i>
                   <h4>Email:</h4>
-                  <p>nikofigit@gmail.com</p>
+                  <p>daymahar2021@gmail.com</p>
                 </div>
   
                 <div class="phone">
                   <i class="bi bi-phone"></i>
                   <h4>Call:</h4>
-                  <p>082238982100</p>
+                  <p>088223348715</p>
                 </div>
   
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.0571977384701!2d109.58897182918845!3d-7.439918669850097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7bd4438ea5543d20!2zN8KwMjYnMjMuNyJTIDEwOcKwMzUnMjIuMyJF!5e0!3m2!1sid!2sid!4v1646296886809!5m2!1sid!2sid" width="100%" height="240px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

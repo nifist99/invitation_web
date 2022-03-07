@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
+
 Route::get('/', 'FrontController@index');
 
 Route::get('daftar', 'FrontController@daftar');

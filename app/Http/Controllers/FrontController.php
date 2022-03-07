@@ -79,7 +79,11 @@ class FrontController extends Controller
 
 
         if($data['row']->view_blade){
+            if($data['row']->status=='active'){
             return view('tema/'.$data['row']->view_blade,$data);
+            }else{
+                return view('welcome');
+            }
         }else{
             $data['view']='home';
             $data['tema']=DB::table('day_tema')
