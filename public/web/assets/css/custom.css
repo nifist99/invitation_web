@@ -1,0 +1,69 @@
+.card-price{
+box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.71);
+-webkit-box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.71);
+-moz-box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.71);
+width: 30%;
+height: 100%;
+padding: 20px;
+background-color: white;
+border-radius: 20px;
+}
+
+.hv{
+    height: 100vh;
+}
+
+.wa{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	left:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+    font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-wa{
+	margin-top:16px;
+}
+
+.font-section{
+    color: #54595F;
+    font-family: "Rubik", Sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+  }
+
+  .font-content{
+    color: #000000;
+    font-family: "Cormorant Garamond", Sans-serif;
+    font-size: 20px;
+  }
+
+  .font-harga{
+    color: #E0AD42;
+    font-family: "Tangerine", Sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  .card-title{
+    color: #101010;
+    font-family: "Cormorant Garamond", Sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+  }
+
+  @media (max-width: 780px) {
+    .card-price{
+        width: 100%;
+    }
+    .hv{
+        height: auto;
+    }
+  }

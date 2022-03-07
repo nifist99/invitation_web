@@ -1,0 +1,132 @@
+
+  .section-2 {
+    min-height: 100vh;
+    padding-bottom: 30px;
+  }
+
+  canvas {
+    display: block;
+    vertical-align: bottom;
+  }
+  
+
+.text {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%,-50%);
+  max-width: 100%;
+  padding: 2em 3em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card-map{
+    box-shadow: -1px 3px 32px -10px rgba(33,33,33,0.39);
+    -webkit-box-shadow: -1px 3px 32px -10px rgba(33,33,33,0.39);
+    -moz-box-shadow: -1px 3px 32px -10px rgba(33,33,33,0.39);
+    color: white;
+    padding: 10px;
+    height:auto;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    }
+
+    #waktu{
+        background-color:#faafdb;
+        min-height:100vh;
+        padding-bottom: 30px;
+      }
+
+      .music{
+        margin-left: 5px;
+        margin-bottom: 150px;
+        background-color: #69c3ff;
+        color: white;
+    }
+    #data{
+      min-height: 200px;
+      padding-bottom: 20px;
+     }
+
+     #section2{
+      min-height: 100vh;
+      padding-bottom: 20px;
+     }
+
+     #section3{
+      min-height: 100vh;
+      padding-bottom: 20px;
+     }
+     
+     #section4{
+      min-height: 100vh;
+      padding-bottom: 20px;
+     }
+
+     #section5{
+      min-height: 100vh;
+      padding-bottom: 20px;
+     }
+     
+     #section6{
+      min-height: 100vh;
+      padding-bottom: 20px;
+     }
+
+     #section7{
+      min-height: 100vh;
+      padding-bottom: 70px;
+     }
+
+     #komentar {
+      background-color: rgb(177, 227, 255);
+      color: white;
+      padding: 15px;
+      width: 50%;
+      height: 350px;
+      overflow: scroll;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+     
+
+    .form-book{
+      width: 50%;
+   }
+     
+
+   
+   @media (max-width: 780px) {
+
+    #komentar{
+      width: 100%;
+    }
+
+    .form-book{
+      width: 100%;
+   }
+
+    .background-img1{
+
+      background-size: 200px!important;
+
+    }
+    .background-img2{
+
+      background-size: 200px!important;
+
+    }
+    .background-img3{
+
+      background-size: 200px!important;
+
+    }
+    .background-img4{
+
+      background-size: 200px!important;
+
+    }
+  
+  
+   }
