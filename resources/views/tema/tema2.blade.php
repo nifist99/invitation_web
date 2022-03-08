@@ -304,7 +304,7 @@
   </div>
 
   <div class="col-sm-12 mt-30 d-flex justify-content-center">
-           <form id="message" method="POST" role="form" class="form-book">
+           <form id="message" method="POST" class="form-book">
 
           <div class="row">
             <input type="hidden" name="id_day_wedding" value="{{$row->id}}">
@@ -313,11 +313,11 @@
             </div>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="pesan" rows="5" placeholder="Masukan Pesan" required></textarea>
+            <textarea class="form-control" id="pesan" name="pesan" rows="5" placeholder="Masukan Pesan" required></textarea>
           </div>
           <br>
           <div class="col-md-12 form-group">
-            <button style="width: 100%" class="btn btn-komentar btn-sm btn-block" type="submit" id="kirim">Kirim</button>
+            <button style="width: 100%" class="btn btn-komentar btn-sm btn-block" type="submit" id="kirim" enable>Kirim</button>
           </div>
         </form>
     </div>
@@ -364,6 +364,7 @@ function myFunction() {
     }
   }
 
+  
 
 </script>
 
@@ -450,6 +451,21 @@ $('#kirim').click(function (e) {
     e.preventDefault();
     $(this).html('Sending..');
 
+    var nama     = $('#nama').val();
+                var pesan    = $('#pesan').val();
+
+                if(nama==''||pesan==''){
+                    $('#daftar').trigger("reset");
+                    $('#kirim').html('Kirim');
+                    Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: "Silahkan Lengkapi Buku Tamu",
+                            showConfirmButton: false,
+                            timer: 5000
+                            })
+                }else{
+
     $.ajax({
       data: $('#message').serialize(),
       url: "{{url('komentar/pesan')}}",
@@ -482,6 +498,7 @@ $('#kirim').click(function (e) {
         })
       }
   });
+}
 });
 
 

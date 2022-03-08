@@ -493,6 +493,21 @@ $(function () {
         e.preventDefault();
         $(this).html('Sending..');
 
+        var nama     = $('#nama').val();
+                var pesan    = $('#pesan').val();
+
+                if(nama==''||pesan==''){
+                    $('#daftar').trigger("reset");
+                    $('#kirim').html('Kirim');
+                    Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: "Silahkan Lengkapi Buku Tamu",
+                            showConfirmButton: false,
+                            timer: 5000
+                            })
+                }else{
+
         $.ajax({
           data: $('#message').serialize(),
           url: "{{url('komentar/pesan')}}",
@@ -525,6 +540,7 @@ $(function () {
             })
           }
       });
+    }
     });
 
 

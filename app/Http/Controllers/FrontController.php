@@ -76,6 +76,8 @@ class FrontController extends Controller
 
         $data['tanggal_wedding'] = date_format($date,"l , d / F / Y ");
 
+        Self::pengunjung($data['row']->id);
+
 
 
         if($data['row']->view_blade){
@@ -97,7 +99,15 @@ class FrontController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
+    public function pengunjung($id)
+    {
+        $data['id_day_wedding']=$id;
+        $data['created_at']=date('Y-m-d');
+        DB::table('day_pengunjung')->insert($data);
+    }
+
     public function create()
     {
         //
@@ -117,6 +127,7 @@ class FrontController extends Controller
         $data['pesan']              =$request->pesan;
         $data['nama']               =$request->nama;
         $data['status']             ='active';
+        $data['created_at']         =date('Y-m-d');
 
         $cek=DB::table('day_wedding_pesan')->insert($data);
         return Response::json($data);

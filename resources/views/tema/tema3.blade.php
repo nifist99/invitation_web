@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
       <meta charset="utf-8">
-      <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <title>{{$row->nama}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,14 +10,10 @@
         <!-- Favicons -->
         <link href="{{CRUDBooster::getSetting('favicon')}}" rel="icon">
         <link href="{{CRUDBooster::getSetting('favicon')}}" rel="apple-touch-icon">
-		<!-- 
-        Layer Template 
-        http://www.templatemo.com/preview/templatemo_438_layer
-    	-->
-        
-        <link href="{{url('tema/tema1/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Dancing+Script:wght@600&family=Handlee&family=Indie+Flower&family=Itim&family=Poppins:wght@200&family=Rubik:wght@600&family=Tangerine&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link href="{{url('tema/tema1/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{url('tema/tema3/css/wow-animate.css')}}">
         <link rel="stylesheet" href="{{url('tema/tema3/css/templatemo-style.css')}}">
         <link rel="stylesheet" href="{{url('tema/tema3/css/custom.css')}}">
@@ -205,9 +200,8 @@ background-image: url("{{url($tema->background_bottom)}}");}
         </div>
       </div>
 
-
       <div id="fifth-section" style="padding-bottom: 50px">
-        <div class="container" data-aos="fade-up">
+        <div class="container">
           <div class="section-title text-center">
             <h2 class="font-section wow bounceInUp">Guest Book</h2>
             <p class="font-body wow bounceInUp">Buku Tamu</p>
@@ -230,7 +224,7 @@ background-image: url("{{url($tema->background_bottom)}}");}
           </div>
         
           <div class="col-sm-12 mt-30 d-flex justify-content-center">
-                   <form id="message" method="POST" role="form" class="form-book">
+                   <form id="message" method="POST" class="form-book">
         
                   <div class="row">
                     <input type="hidden" name="id_day_wedding" value="{{$row->id}}">
@@ -239,11 +233,11 @@ background-image: url("{{url($tema->background_bottom)}}");}
                     </div>
                   </div>
                   <div class="form-group mt-3">
-                    <textarea class="form-control" name="pesan" rows="5" placeholder="Masukan Pesan" required></textarea>
+                    <textarea class="form-control" id="pesan" name="pesan" rows="5" placeholder="Masukan Pesan" required></textarea>
                   </div>
                   <br>
                   <div class="col-md-12 form-group">
-                    <button style="width: 100%;" class="btn btn-komentar btn-sm btn-block" id="kirim" type="submit">Kirim</button>
+                    <button style="width: 100%;" class="btn btn-komentar btn-sm" type="button" id='kirim'>Kirim</button>
                     
                   </div>
                 </form>
@@ -253,11 +247,12 @@ background-image: url("{{url($tema->background_bottom)}}");}
       </div>
 
 
+
       <footer>
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
-            <div class="copyright-text">
+            <div class="text-center">
               <p>Undangan Online Daymahar</p>
             </div>
           </div>
@@ -389,9 +384,25 @@ background-image: url("{{url($tema->background_bottom)}}");}
   });
   
   
-  $('#kirim').click(function (e) {
+  $('#kirim').click(function(e){
+      console.log('test');
       e.preventDefault();
       $(this).html('Sending..');
+
+                var nama     = $('#nama').val();
+                var pesan    = $('#pesan').val();
+
+                if(nama==''||pesan==''){
+                    $('#daftar').trigger("reset");
+                    $('#kirim').html('Kirim');
+                    Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: "Silahkan Lengkapi Buku Tamu",
+                            showConfirmButton: false,
+                            timer: 5000
+                            })
+                }else{
   
       $.ajax({
         data: $('#message').serialize(),
@@ -400,8 +411,9 @@ background-image: url("{{url($tema->background_bottom)}}");}
         dataType: 'json',
         success: function (data) {
           var post='<div>';
-          post +='<p class="font-book1">'+data.nama+'</p>';
-          post +='<p class="font-book">'+data.pesan+'</p>';
+          post +='<p class="font-nama">'+data.nama+'</p>';
+          post +='<p class="font-komentar">'+data.pesan+'</p>';
+          post +='<hr style="border: 1px solid black!important">';
           post +='</div>';
           
           $('#komentar').append(post);
@@ -425,7 +437,9 @@ background-image: url("{{url($tema->background_bottom)}}");}
           })
         }
     });
+  }
   });
+
   
   
   })

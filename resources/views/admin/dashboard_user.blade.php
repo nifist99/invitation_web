@@ -75,7 +75,7 @@
                   <div>
                     <a href="{{url('/admin/day_wedding_pesan?return_url='.$url.'/'.$url_sub)}}" class="btn btn-sm btn-danger"><i class="fa fa-envelope"></i> Pesan Online</a>
                     <a href="{{url('/admin/day_wedding_tamu?return_url='.$url.'/'.$url_sub)}}" class="btn btn-success btn-sm"><i class="fa fa-users"></i> Tamu Undangan</a>
-                    <a href="" class="btn btn-primary btn-sm"><i class="fa fa-bar-chart"></i> Analisis</a>
+                    <a href="{{CRUDBooster::mainpath('detail/'.$key->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-bar-chart"></i> Analisis</a>
                   </div>
             </div>
         </div>

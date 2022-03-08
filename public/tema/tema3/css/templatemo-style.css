@@ -294,7 +294,7 @@ body {
 
           transition: opacity 1.5s ease;
 
-  z-index: 12;
+  
 
 }
 
@@ -766,7 +766,7 @@ body {
 
   position:absolute; 
 
-  z-index: 11;
+
 
   background-color: #fff;
 
@@ -1431,15 +1431,6 @@ footer {
   display: inline;
 
 }
-
-
-
-.posts img {
-
-
-
-}
-
 
 
 .posts a {

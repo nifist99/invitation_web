@@ -332,6 +332,51 @@
 			 return $this->view('admin.dashboard_user',$data);
 		  }
 
+		  public function getDetail($id) {
+			//Create an Auth
+			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_edit==FALSE) {    
+			  CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+			
+			$data = [];
+			$data['page_title'] = 'Analisis';
+			$data['id']=$id;
+			if(g('bulan')==null){
+				$data['bulan_result']=date('m');
+			}else{
+				$data['bulan_result']=g('bulan');
+			}
+
+			$data['bulan']=CRUDBooster::bulan();
+
+			for($i=1;$i<=31;$i++){
+				$data['hari'].="'".$i."'".',';
+			}
+			
+
+			for($i=1;$i<=31;$i++){
+				$data['pesan'] .=DB::table('day_wedding_pesan')
+							->where('id_day_wedding',$id)
+							->whereMonth('created_at', $data['bulan_result'])
+					 		->whereDay('created_at', $i)
+							->count().",";
+			}
+
+			for($i=1;$i<=31;$i++){
+				$data['pengunjung'] .=DB::table('day_pengunjung')
+							->where('id_day_wedding',$id)
+							->whereMonth('created_at', $data['bulan_result'])
+					 		->whereDay('created_at', $i)
+							->count().",";
+			}
+			
+
+			
+
+			//Please use view method instead view method from laravel
+			return $this->view('admin.analisis',$data);
+		  }
+
 
 
 	    //By the way, you can still create your own method in here... :) 
