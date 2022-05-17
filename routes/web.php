@@ -30,3 +30,8 @@ Route::post('komentar/pesan', 'FrontController@store');
 Route::post('register', 'FrontController@register');
 
 Route::post('suscribe', 'FrontController@suscribe');
+
+Route::post('giftpost', 'FrontController@giftpost');
+
+Route::get('test', 'FrontController@test');
+

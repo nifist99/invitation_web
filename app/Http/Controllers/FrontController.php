@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use DB;
 use Response;
 use Hash;
+use CRUDBooster;
+use Storage;
+use Image;
+use Session;
 
 class FrontController extends Controller
 {
@@ -72,9 +76,14 @@ class FrontController extends Controller
                         ->where('status','active')
                         ->get();
 
-        $date            = date_create($data['row']->tanggal);
+        // $date            = date_create($data['row']->tanggal);
+        // $date_end            = date_create($data['row']->end_tanggal);
 
-        $data['tanggal_wedding'] = date_format($date,"l , d / F / Y ");
+        // $data['tanggal_wedding'] = date_format($date,"l , d / F / Y ");
+        // $data['end_tanggal'] = date_format($date_end,"l , d / F / Y ");
+        
+        $data['tanggal_wedding']=Self::tanggal_indo($data['row']->tanggal);
+        $data['end_tanggal']=Self::tanggal_indo($data['row']->end_tanggal);
 
         Self::pengunjung($data['row']->id);
 
@@ -230,4 +239,74 @@ class FrontController extends Controller
     {
         //
     }
+    
+    public function giftpost(Request $request){
+        
+        $this->validate($request, [
+		'foto' => 'required',
+		'nama' => 'required',
+		'nominal' => 'required',
+	]);
+        
+        $file = $request->file('foto');
+        $ext  = $file->getClientOriginalName();
+        $filename = md5(str_random(5)).$ext;
+        $file_path = 'uploads/'.date('Y-m');
+        Storage::makeDirectory($file_path);
+        
+        $path=Storage::putFileAs($file_path, $file, $filename);
+        
+        $data['foto']=$path;
+        $data['nama']=$request->nama;
+        $data['id_day_wedding']=$request->id_day_wedding;
+        $data['nominal']=$request->nominal;
+        $data['created_at']=date('Y-m-d');
+        
+        
+        $test=DB::table('day_gift')->insert($data);
+        
+        return redirect()->back()->with(['message' => 'success','message_type' => 'success']);
+        
+        
+    }
+    
+    
+    public function test(){
+        return view('test');
+    }
+    
+    public function tanggal_indo($tanggal, $cetak_hari = true)
+{
+	$hari = array ( 1 =>    'Senin',
+				'Selasa',
+				'Rabu',
+				'Kamis',
+				'Jumat',
+				'Sabtu',
+				'Minggu'
+			);
+			
+	$bulan = array (1 =>   'Januari',
+				'Februari',
+				'Maret',
+				'April',
+				'Mei',
+				'Juni',
+				'Juli',
+				'Agustus',
+				'September',
+				'Oktober',
+				'November',
+				'Desember'
+			);
+	$split 	  = explode('-', $tanggal);
+	$tgl_indo = $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
+	
+	if ($cetak_hari) {
+		$num = date('N', strtotime($tanggal));
+		return $hari[$num] . ', ' . $tgl_indo;
+	}
+	return $tgl_indo;
+}
+
 }

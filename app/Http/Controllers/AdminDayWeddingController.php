@@ -97,6 +97,7 @@
 				}
 			}];
 			$this->col[] = ["label"=>"Foto Background","name"=>"foto","image"=>true];
+			$this->col[] = ["label"=>"Video","name"=>"video","file"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -111,10 +112,13 @@
 			$this->form[] = ['label'=>'Latitude','name'=>'latitude','type'=>'text','validation'=>'|string|min:1|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Longitude','name'=>'longitude','type'=>'text','validation'=>'|string|min:1|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Pernikahan','name'=>'tanggal','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggal Berakhir','name'=>'end_tanggal','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Hp','name'=>'hp','type'=>'number','validation'=>'|numeric','width'=>'col-sm-10','placeholder'=>'You can only enter the number only'];
 			$this->form[] = ['label'=>'Waktu Akad','name'=>'waktu_akad','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Waktu Resepsi','name'=>'waktu_resepsi','type'=>'time','validation'=>'|date_format:H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Foto Background','name'=>'foto','type'=>'upload','validation'=>'required|image','width'=>'col-sm-10'];
+			
+			$this->form[] = ['label'=>'Video','name'=>'video','type'=>'upload','validation'=>'','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -369,6 +373,12 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
+	        $id_cms_users=CRUDBooster::myId();
+	        $cek=DB::table('cms_users')->where('id',$id_cms_users)->first();
+	        if($cek->id_cms_privileges==3){
+	        $query->where('day_wedding.id_cms_users',$id_cms_users)
+	               ->where('day_wedding.status','active');
+	        }
 	            
 	    }
 

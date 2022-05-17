@@ -170,7 +170,7 @@ background-image: url("{{url($tema->background_bottom)}}");}
       </div>
 
 
-      <div class="bg__fourth">
+      <div class="bg__fourth" style="padding-bottom: 50px">
         <div id="fourth-section">
           <div class="container pt-50">
             <div class="section-title text-center">

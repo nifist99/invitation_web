@@ -3,12 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>{{$row->nama}}</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="{{CRUDBooster::getSetting('favicon')}}" rel="icon">
@@ -43,6 +41,12 @@
   background-repeat: no-repeat;
 }
 
+body{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
 #map {
   height: 400px;
   /* The height is 400 pixels */
@@ -54,7 +58,7 @@
   #particles-js  {
   background-image: url("{{url($row->foto)}}");
   width: 100%;
-  height: 130vh;
+  height: 100vh;
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -110,7 +114,7 @@
           <img src="{{url('tema/tema1/assets/img/pria.png')}}" width="200px" height="200px">
           </div>
            <div class="text-center">
-          <p class="font-data1">Nama {{$pria->nama}}</p>
+          <p class="font-data1">{{$pria->nama}}</p>
           <p class="font-data2">Putra dari pasangan <br> {{$pria->nama_ortu}}</p>
         </div>
         </div>
@@ -120,7 +124,7 @@
           <img src="{{url('tema/tema1/assets/img/wanita.png')}}" width="200px" height="200px">
         </div>
             <div class="text-center">
-          <p class="font-data1">Nama {{$wanita->nama}}</p>
+          <p class="font-data1">{{$wanita->nama}}</p>
           <p class="font-data2">Putri dari pasangan <br> {{$wanita->nama_ortu}}</p>
         </div>
         </div>
@@ -133,7 +137,7 @@
     <div class="container" data-aos="fade-up">
       <div class="section-title text-center">
         <img src="{{url('tema/tema1/assets/img/daun.png')}}" width="100px">
-        <h2 class="font-section-waktu">Bergabunglah di Moment Spesial Kami</h2>
+        <h2 class="font-section-waktu">Mohon do'a & restu</h2>
       </div>
       <div class="row pt-30">
         <div class="col-lg-12 col-md-12">
@@ -141,15 +145,21 @@
               <div class="card">
               <div class="card-body">
                 <div class="text-center">
-                    <h6 class="font-waktu pt-10"><b>Resepsi</b></h6>
+                    <h6 class="font-waktu pt-10"><b>Waktu Akad</b></h6>
                     <img src="{{url('tema/tema1/assets/img/schedule.png')}}" width="40px" />
+                    <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_akad}} WIB</p>
                     <h6 class="font-waktu1 pt-10">{{$tanggal_wedding}}</h6>
+                    
+                    <h6 class="font-waktu pt-10"><b>Tasyakuran</b></h6>
+                    <img src="{{url('tema/tema1/assets/img/schedule.png')}}" width="40px" />
                     <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_resepsi}} WIB</p>
+                    <h6 class="font-waktu1 pt-10">{{$tanggal_wedding}} <br> s/d </br> {{$end_tanggal}}</h6>
                     <img src="{{url('tema/tema1/assets/img/location.png')}}" width="40px" />
                     <p class="font-waktu1">{{{$row->alamat}}}</p>
                     @if($row->latitude && $row->longitude)
                     <div id="map"></div>
-                    <a href="cursor:pointer;" onclick="myNavFunc()" class="btn btn-sm btn-font mt-10"><i class="fa fa-map-marker"></i>&nbsp;Google Maps</a>
+                    <!--<a href="cursor:pointer;" onclick="myNavFunc()" class="btn btn-sm btn-font mt-10"><i class="fa fa-map-marker"></i>&nbsp;Google Maps</a>-->
+                     <a href="https://maps.google.com/?q={{$row->latitude}},{{$row->longitude}}" class="btn btn-sm btn-font mt-10"><i class="fa fa-map-marker"></i>&nbsp;Google Maps</a>
                     @endif
                   </div>
               </div>
@@ -211,7 +221,7 @@
     
   </section>
 
-@if($row->video_url)
+@if($row->video_url || $row->video)
   <section id="video" class="pt-50">
     <div class="container" data-aos="fade-up">
        <div class="section-title text-center">
@@ -221,7 +231,27 @@
       <div class="row">
       <div class="col-sm-12">
         <div class="d-flex justify-content-center">
-         <iframe width="100%" height="400px" src="https://www.youtube.com/embed/lEfXsP650ks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+        <!--<video width="100%" height="400px" controls>-->
+        <!--  <source src="{{$row->video_url}}" type="video/mp4">-->
+        <!--  <source src="{{$row->video_url}}" type="video/ogg">-->
+        <!--  Your browser does not support HTML video.-->
+        <!--</video>-->
+        @if($row->video)
+        <video controls width="250">
+
+                <source src="{{url($row->video)}}"
+                        type="video/webm">
+            
+                <source src="{{url($row->video)}}"
+                        type="video/mp4">
+            
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+        @else
+        
+         <iframe width="100%" height="400px" src="{{$row->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         @endif
       </div>
       </div>
     </div>
@@ -246,7 +276,7 @@
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".engagement">Engagement</li>
               <li data-filter=".prewedding">Prewedding</li>
-              <li data-filter=".memories">Memories</li>
+              <!--<li data-filter=".memories">Memories</li>-->
             </ul>
           </div>
         </div>
@@ -284,7 +314,8 @@
 
         <div class="row">
         <div class="col-sm-12 d-flex justify-content-center">
-          <button type="button" onclick="book()" class="btn btn-lg btn-font">Kirim Amplop Undangan</button>
+          <!--<button type="button" onclick="book()" class="btn btn-lg btn-font">Kirim Amplop Undangan</button>-->
+          <button type="button" class="btn btn-lg btn-font" data-bs-toggle="modal" data-bs-target="#exampleModal">Kirim Amplop</button>
         </div>
         <div class="col-sm-12 d-flex justify-content-center">
             <img src="{{url('tema/tema1/assets/img/giftcard.png')}}" width="50%" height="auto">
@@ -292,6 +323,51 @@
         </div>
 
         </div>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Gift Untuk Mempelai</h5>
+      </div>
+      
+      
+       <form action="{{url('giftpost')}}" method="post" enctype='multipart/form-data' id="gift">
+      <div class="modal-body">
+           @csrf
+           <input type='hidden' name='id_day_wedding' value='{{$row->id}}'>
+          <div class="form-group">
+              <input type="text" class="form-control" name='nama' placeholder="nama" required>
+          </div>
+          <div class="form-group" style="margin-top: 10px;">
+              <input type="text" class="form-control" id="nominal" name='nominal' placeholder="nominal" required>
+          </div>
+        <div class="form-group" style="margin-top: 10px;">
+          <input type="file" class="form-control" id="tf" name='foto' placeholder="bukti tf" required>
+          <span style="color:#565656;font-size: 12px;">kirim bukti transfer</span>
+        </div>
+      <hr>
+      
+      @foreach($rekening as $r)
+      <div class='d-flex align-items-center'>
+          <img src="{{url($r->foto_atm)}}" width="60" height="50">&nbsp;
+          <p><b>A.n {{$r->nama}} : {{$r->norek}}</b></p>
+      </div>
+        
+      @endforeach
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Kirim</button>
+      </div>
+      
+        </form>
+      
+      
+    </div>
+  </div>
+</div>
 
     </section>
 @endif
@@ -376,18 +452,18 @@
  
 
 
-  <template id="my-template">
-        <swal-title>
-          Kasih Hadiah 
-        </swal-title>
-        @foreach($rekening as $rek)
-          <swal-html>A.n {{$rek->nama}} : {{$rek->norek}}</swal-html>
-          <swal-image src="{{url($rek->foto_atm)}}" width="200" height="150" />
-        @endforeach
-        <swal-button type="confirm">
-          OK
-        </swal-button>
-  </template>
+  <!--<template id="my-template">-->
+  <!--      <swal-title>-->
+  <!--        Kasih Hadiah -->
+  <!--      </swal-title>-->
+  <!--      @foreach($rekening as $rek)-->
+  <!--        <swal-html>A.n {{$rek->nama}} : {{$rek->norek}}</swal-html>-->
+  <!--        <swal-image src="{{url($rek->foto_atm)}}" width="200" height="150" />-->
+  <!--      @endforeach-->
+  <!--      <swal-button type="confirm">-->
+  <!--        OK-->
+  <!--      </swal-button>-->
+  <!--</template>-->
 
   <script type="text/javascript">
     var music = document.getElementById("my_audio"); 
@@ -407,8 +483,25 @@
 
 
   </script>
+     @if(Session::get('message')!='')
+     <script>
+            Swal.fire({
+              icon: 'success',
+              title: 'Terimakasih telah memberikan hadiah ke pengantin :)',
+              confirmButtonText: 'Oke',
+            }).then((result) => {
+              /* Read more about isConfirmed, isDenied below */
+              if (result.isConfirmed) {
+                icon.classList.toggle('fa-pause');
+                                  music.play(); 
+              }
+            })
+     
+    </script>
+     @else
 
   <script type="text/javascript">
+  
 document.addEventListener("DOMContentLoaded", function(){
 
     const swalimg = Swal.mixin({
@@ -444,6 +537,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
   </script>
 
+@endif
 
   <script type="text/javascript">
     function book() {
@@ -580,6 +674,7 @@ $(function () {
 
   <script src="https://maps.googleapis.com/maps/api/js?key={{CRUDBooster::getSetting('google_api_key')}}&callback=initMap"
       async defer></script>
+      
 
 @endif
 

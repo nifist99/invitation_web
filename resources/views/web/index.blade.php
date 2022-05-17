@@ -12,7 +12,7 @@
           <h2><b>Murah & Keren</b></h2>
           <div class="d-flex">
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            <a href="https://youtu.be/A7A7n4WVRh4" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Turorial Video</span></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -342,8 +342,8 @@
           <div class="col-sm-12 d-flex justify-content-center align-items-center">
            <div class="card-price">
             <div class="card-body ">
-              <h3 class="card-title text-center">Harga</h3>
-              <h3 class="font-harga text-center">RP. 60k </h3>
+              <h3 class="card-title text-center">Harga Mulai Dari</h3>
+              <h3 class="font-harga text-center">RP. {{CRUDBooster::getSetting('harga')}} k </h3>
               <ul>
                 <p class="font-content"><i class="fa fa-check" style="color: greenyellow"></i><b> Include All Fitur</b></p>
                 <p class="font-content"><i class="fa fa-check" style="color: greenyellow"></i><b> Nama Tamu Unlimited</b></p>

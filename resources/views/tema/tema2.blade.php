@@ -475,6 +475,7 @@ $('#kirim').click(function (e) {
         var post='<div>';
         post +='<p class="font-book1">'+data.nama+'</p>';
         post +='<p class="font-book">'+data.pesan+'</p>';
+        post +='<hr style="border: 1px solid black!important">';
         post +='</div>';
         
         $('#komentar').append(post);

@@ -505,6 +505,15 @@ border-radius: 10px;
 
 }
 
+.text {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%,-50%);
+  max-width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .font-galeri{
   font-size: 42px;
 }
