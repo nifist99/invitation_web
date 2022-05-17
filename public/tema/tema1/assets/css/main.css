@@ -497,21 +497,19 @@ border-radius: 10px;
   }
 
   .music{
-    margin-bottom: 150px;
+    margin-bottom: 30px;
+}
+
+.font-heading{
+    font-size:72px;
 }
 
 .font-section{
     font-size: 36px;
 
 }
-
 .text {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%,-50%);
-  max-width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  padding: 0em 0em;
 }
 
 .font-galeri{

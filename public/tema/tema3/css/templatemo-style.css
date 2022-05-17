@@ -1802,6 +1802,11 @@ footer {
     width: 300px;
 
   }
+  
+  .bg__fourth{
+            height:auto!important;
+            padding-bottom:20px;
+        }
 
 }
 
