@@ -39,8 +39,9 @@ class FrontController extends Controller
         $data['row'] =  DB::table('day_wedding')
                         ->join('day_tema','day_wedding.id_day_tema','=','day_tema.id')
                         ->join('day_music','day_wedding.id_day_music','=','day_music.id')
+                        ->join('cms_users','day_wedding.id_cms_users','=','cms_users.id')
                         ->where('day_wedding.url_web',$url_web)
-                        ->select('day_wedding.*','day_tema.view as view_blade','day_music.url as url_music')
+                        ->select('day_wedding.*','day_tema.view as view_blade','day_music.url as url_music','cms_users.id as id_users')
                         ->first();
         
         $data['tema']=DB::table('day_tema')

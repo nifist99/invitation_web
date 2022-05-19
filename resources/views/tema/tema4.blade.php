@@ -28,7 +28,7 @@
 
   <!-- Template Main CSS File -->
 
-  <link href="{{url('tema/tema1/assets/css/main.css')}}" rel="stylesheet">
+  <link href="{{url('tema/tema4/assets/css/main.css')}}" rel="stylesheet">
    <link href="{{url('tema/tema1/assets/css/sweetalert2.min.css')}}" rel="stylesheet">
 
 
@@ -91,7 +91,6 @@ body{
       <p class="font-heading1"><b>The Wedding Of</b></p>
       <h1 class="mb-3 font-heading">{{$row->nama}}</h1>
       <p class="mb-4 font-heading2">{{$end_tanggal}}</p>
-<!--       <a href="about.html" class="btn btn-sm btn-success bounce mt-5">Buka undangan <i class="fa fa-arrow-down"></i></a> -->
     </div>
   </div><!-- End Hero -->
     </div>
@@ -102,7 +101,7 @@ body{
   <section id="data" class="pt-50">
     <div class="container" data-aos="fade-up">
       <div class="text-center">
-        <h3 class="font-section">Bismillah hirrohmani rohim</h3>
+        <h3 class="font-section-waktu" style="color: goldenrod">Bismillah hirrohmani rohim</h3>
       </div>
 
       <div class="row">
@@ -193,7 +192,6 @@ body{
                     <p class="font-waktu1">{{{$row->alamat}}}</p>
                     @if($row->latitude && $row->longitude)
                     <div id="map"></div>
-                    <!--<a href="cursor:pointer;" onclick="myNavFunc()" class="btn btn-sm btn-font mt-10"><i class="fa fa-map-marker"></i>&nbsp;Google Maps</a>-->
                      <a href="https://maps.google.com/?q={{$row->latitude}},{{$row->longitude}}" class="btn btn-sm btn-font mt-10"><i class="fa fa-map-marker"></i>&nbsp;Google Maps</a>
                     @endif
                   </div>
@@ -256,6 +254,44 @@ body{
     
   </section>
 
+@php
+$kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();    
+@endphp
+@if(count($kisah) !=0)
+  <section id="kisah" class="pt-50">
+    <div class="container" data-aos="fade-up">
+       <div class="section-title text-center">
+        <h2 class="font-section-galeri">Story Of Memories</h2>
+        <p class="font-galeri">Story</p>
+      </div>
+      <div class="row">
+      <div class="col-sm-12">
+        <div class="timeline">
+            @foreach($kisah as $k)
+            @if($k->posisi=='left')
+            <div class="container-timeline left">
+              <div class="content">
+                <h4 class="font-waktu">{{Daymahar::tanggal_indo($k->date)}}</h4>
+                <p class="font-timeline">{{$k->content}}</p>
+              </div>
+            </div>
+            @else
+
+            <div class="container-timeline right">
+              <div class="content">
+                <h4 class="font-waktu">{{Daymahar::tanggal_indo($k->date)}}</h4>
+                <p class="font-timeline">{{$k->content}}</p>
+              </div>
+            </div>
+            @endif
+            @endforeach
+          </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  @endif
+
 @if($row->video_url || $row->video)
   <section id="video" class="pt-50">
     <div class="container" data-aos="fade-up">
@@ -266,7 +302,7 @@ body{
       <div class="row">
       <div class="col-sm-12">
         <div class="d-flex justify-content-center">
-            <iframe src="{{$row->video_url}}" width="100%" height="400px" allowfullscreen></iframe>
+            <iframe src="{{$row->video_url}}" width="100%" height="500px" allowfullscreen></iframe>
 
         @if($row->video)
         <video controls width="300px">
@@ -281,7 +317,6 @@ body{
             </video>
         @else
         
-         {{-- <iframe width="100%" height="400px" src="{{$row->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
          @endif
       </div>
       </div>
@@ -363,8 +398,8 @@ body{
       </div>
       
       
-       <form action="{{url('giftpost')}}" method="post" enctype='multipart/form-data' id="gift">
-      <div class="modal-body">
+       <form action="{{url('giftpost')}}" method="post" class="modal-color" enctype='multipart/form-data' id="gift">
+      <div class="modal-body modal-color">
            @csrf
            <input type='hidden' name='id_day_wedding' value='{{$row->id}}'>
           <div class="form-group">
@@ -375,7 +410,7 @@ body{
           </div>
         <div class="form-group" style="margin-top: 10px;">
           <input type="file" class="form-control" id="tf" name='foto' placeholder="bukti tf" required>
-          <span style="color:#565656;font-size: 12px;">kirim bukti transfer</span>
+          <span style="color:#565656;font-size: 14px;"><b>kirim bukti transfer</b></span>
         </div>
       <hr>
       
@@ -450,7 +485,7 @@ body{
     </section>
 
     @if($row->ucapan_bawah)
-    <section id="data" class="pt-50">
+    <section id="salam" class="pt-50">
       <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="col-sm-12">
@@ -478,7 +513,7 @@ body{
     <!-- Modal -->
     <footer id="footer" class="d-flex justify-content-center align-items-center">
 
-            <p class="font-footer">E-invitation by daymahar.com - Made with Love</p>
+            <p class="font-footer">E-invitation by daymahar - Made with Love</p>
            
            
 
@@ -504,7 +539,6 @@ body{
   <script src="{{url('tema/tema1/assets/js/app.js')}}"></script>
   <script src="{{url('tema/tema1/assets/js/sweetalert2.min.js')}}"></script>
   <script src="{{url('tema/tema1/assets/js/jquery.min.js')}}"></script>
-
 
   <script type="text/javascript">
     var music = document.getElementById("my_audio"); 
@@ -566,7 +600,7 @@ document.addEventListener("DOMContentLoaded", function(){
         imageAlt: 'Wedding E-invitation',
         confirmButtonText:
         '<i class="fa fa-envelope"></i> Buka Undangan',
-        confirmButtonColor: '#B8803A',
+        confirmButtonColor: 'goldenrod',
       }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
   if (result.isConfirmed) {
@@ -701,17 +735,6 @@ $(function () {
   }
   </script>
 
-  {{-- <script>
-    function myNavFunc(){
-      // If it's an iPhone..
-      if( (navigator.platform.indexOf("iPhone") != -1) 
-          || (navigator.platform.indexOf("iPod") != -1)
-          || (navigator.platform.indexOf("iPad") != -1))
-          window.open("maps://www.google.com/maps/dir/?api={{CRUDBooster::getSetting('google_api_key')}}&travelmode=driving&layer=traffic&destination={{$row->latitude}},{{$row->longitude}}");
-      else
-          window.open("https://www.google.com/maps/dir/?api={{CRUDBooster::getSetting('google_api_key')}}&travelmode=driving&layer=traffic&destination={{$row->latitude}},{{$row->longitude}}");
-  }
-  </script> --}}
 
   <script src="https://maps.googleapis.com/maps/api/js?key={{CRUDBooster::getSetting('google_api_key')}}&callback=initMap"
       async defer></script>

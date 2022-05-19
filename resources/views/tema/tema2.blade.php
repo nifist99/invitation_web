@@ -38,6 +38,14 @@
         background-repeat: no-repeat;
       }
 
+      #header{
+        background-image: url("{{url($row->foto)}}");
+        height: 100vh;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
       .background-img1{
         background-image: url('{{url($tema->background_top)}}'),url('{{url($tema->background_left)}}');
         background-repeat: no-repeat,no-repeat;
@@ -109,6 +117,7 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="header">
+    <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
   <div id="particles-js">
@@ -122,6 +131,7 @@
   </div><!-- End Hero -->
     </div>
     </div>
+  </div>
   </section>
 
   {{-- <nav class="navbar fixed-bottom navbar-expand-sm background-color">
