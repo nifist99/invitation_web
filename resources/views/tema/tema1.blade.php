@@ -239,12 +239,12 @@ body{
       <div class="row">
       <div class="col-sm-12">
         <div class="d-flex justify-content-center">
-            
-        <!--<video width="100%" height="400px" controls>-->
+            <iframe src="{{$row->video_url}}" width="100%" height="400px" frameborder="0"></iframe>
+        {{-- <!--<video width="100%" height="400px" controls>-->
         <!--  <source src="{{$row->video_url}}" type="video/mp4">-->
         <!--  <source src="{{$row->video_url}}" type="video/ogg">-->
         <!--  Your browser does not support HTML video.-->
-        <!--</video>-->
+        <!--</video>--> --}}
         @if($row->video)
         <video controls width="300px">
 
