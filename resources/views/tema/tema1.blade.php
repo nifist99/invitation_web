@@ -161,7 +161,7 @@ body{
                     <h6 class="font-waktu pt-10"><b>Resepsi</b></h6>
                     <img src="{{url('tema/tema1/assets/img/schedule.png')}}" width="40px" />
                     <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_resepsi}} WIB</p>
-                    <h6 class="font-waktu1 pt-10">@if($tanggal_wedding){{$tanggal_wedding}} @endif <br> s/d </br> {{$end_tanggal}}</h6>
+                    <h6 class="font-waktu1 pt-10">@if($tanggal_wedding){{$tanggal_wedding}}<br> s/d </br>@endif  {{$end_tanggal}}</h6>
                     <img src="{{url('tema/tema1/assets/img/location.png')}}" width="40px" />
                     <p class="font-waktu1">{{{$row->alamat}}}</p>
                     @if($row->latitude && $row->longitude)
