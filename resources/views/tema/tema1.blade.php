@@ -126,9 +126,9 @@ body{
          <div class="col-lg-6 col-md-12">
           <div class="d-flex justify-content-center">
           @if($wanita->foto)
-          <img src="{{url('tema/tema1/assets/img/wanita.png')}}" width="200px" height="200px">
-          @else
           <img src="{{url($wanita->foto)}}" width="200px" height="200px">
+          @else
+          <img src="{{url('tema/tema1/assets/img/wanita.png')}}" width="200px" height="200px">
           @endif
         </div>
             <div class="text-center">
