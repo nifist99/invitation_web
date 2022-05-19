@@ -184,6 +184,8 @@ body{
                     <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_resepsi}} WIB</p>
                     <h6 class="font-waktu1 pt-10">
                       @if($tanggal_wedding==null){{$tanggal_wedding}}<br> s/d </br>  {{$end_tanggal}} 
+                      @else
+                      {{$end_tanggal}} 
                       @endif
                     </h6>
                     @endif
