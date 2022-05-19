@@ -111,7 +111,11 @@ body{
 
         <div class="col-lg-6 col-md-12">
           <div class="d-flex justify-content-center">
-          <img src="{{url('tema/tema1/assets/img/pria.png')}}" width="200px" height="200px">
+            @if($pria->foto)
+            <img src="{{url($pria->foto)}}" width="200px" height="200px">
+            @else
+            <img src="{{url('tema/tema1/assets/img/pria.png')}}" width="200px" height="200px">
+            @endif
           </div>
            <div class="text-center">
           <p class="font-data1">{{$pria->nama}}</p>
@@ -121,7 +125,11 @@ body{
 
          <div class="col-lg-6 col-md-12">
           <div class="d-flex justify-content-center">
+          @if($wanita->foto)
           <img src="{{url('tema/tema1/assets/img/wanita.png')}}" width="200px" height="200px">
+          @else
+          <img src="{{url($wanita->foto)}}" width="200px" height="200px">
+          @endif
         </div>
             <div class="text-center">
           <p class="font-data1">{{$wanita->nama}}</p>
@@ -238,7 +246,7 @@ body{
         <!--  Your browser does not support HTML video.-->
         <!--</video>-->
         @if($row->video)
-        <video controls width="250">
+        <video controls width="300px">
 
                 <source src="{{url($row->video)}}"
                         type="video/webm">
