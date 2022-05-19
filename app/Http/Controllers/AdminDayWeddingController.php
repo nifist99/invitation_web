@@ -120,8 +120,8 @@
 			
 			$this->form[] = ['label'=>'Video','name'=>'video','type'=>'upload','validation'=>'','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Resepsi Status','name'=>'resepsi_status','type'=>'select','dataenum'=>'active;notactive'];
-			$this->form[] = ['label'=>'Ucapan Atas','name'=>'ucapan_atas','type'=>'textarea','validation'=>'required|string|min:1|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Ucapan Bawah','name'=>'ucapan_bawah','type'=>'textarea','validation'=>'required|string|min:1|max:5000','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Ucapan Atas','name'=>'ucapan_atas','type'=>'textarea','validation'=>'string|min:1|max:5000','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Ucapan Bawah','name'=>'ucapan_bawah','type'=>'textarea','validation'=>'string|min:1|max:5000','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
