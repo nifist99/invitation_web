@@ -239,7 +239,7 @@ body{
       <div class="row">
       <div class="col-sm-12">
         <div class="d-flex justify-content-center">
-            <iframe src="{{$row->video_url}}" width="100%" height="400px" frameborder="0"></iframe>
+            <iframe src="{{$row->video_url}}" width="100%" height="400px" allow="autoplay"></iframe>
         {{-- <!--<video width="100%" height="400px" controls>-->
         <!--  <source src="{{$row->video_url}}" type="video/mp4">-->
         <!--  <source src="{{$row->video_url}}" type="video/ogg">-->
@@ -258,7 +258,7 @@ body{
             </video>
         @else
         
-         <iframe width="100%" height="400px" src="{{$row->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         {{-- <iframe width="100%" height="400px" src="{{$row->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
          @endif
       </div>
       </div>
