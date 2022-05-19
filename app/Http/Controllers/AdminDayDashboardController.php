@@ -4,6 +4,7 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use Daymahar;
 
 	class AdminDayDashboardController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -347,7 +348,7 @@
 				$data['bulan_result']=g('bulan');
 			}
 
-			$data['bulan']=CRUDBooster::bulan();
+			$data['bulan']=Daymahar::bulan();
 
 			for($i=1;$i<=31;$i++){
 				$data['hari'].="'".$i."'".',';
