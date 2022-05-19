@@ -156,7 +156,7 @@ body{
                     <h6 class="font-waktu pt-10"><b>Waktu Akad</b></h6>
                     <img src="{{url('tema/tema1/assets/img/schedule.png')}}" width="40px" />
                     <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_akad}} WIB</p>
-                    <h6 class="font-waktu1 pt-10">{{$tanggal_wedding}}</h6>
+                    <h6 class="font-waktu1 pt-10">{{$end_tanggal}}</h6>
                     
                     <h6 class="font-waktu pt-10"><b>Tasyakuran</b></h6>
                     <img src="{{url('tema/tema1/assets/img/schedule.png')}}" width="40px" />
