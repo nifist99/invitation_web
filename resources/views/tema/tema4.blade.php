@@ -535,8 +535,8 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
 
   <!-- Template Main JS File -->
   <script src="{{url('tema/tema1/assets/js/main.js')}}"></script>
-   <script src="{{url('tema/tema1/assets/js/particles.js')}}"></script>
-  <script src="{{url('tema/tema1/assets/js/app.js')}}"></script>
+   <script src="{{url('tema/tema4/assets/js/particles.js')}}"></script>
+  <script src="{{url('tema/tema4/assets/js/custom.js')}}"></script>
   <script src="{{url('tema/tema1/assets/js/sweetalert2.min.js')}}"></script>
   <script src="{{url('tema/tema1/assets/js/jquery.min.js')}}"></script>
 
