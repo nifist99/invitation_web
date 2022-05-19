@@ -121,7 +121,7 @@ body{
           </div>
         @endif
 
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-6 col-md-12 mt-20">
           <div class="d-flex justify-content-center">
             @if($pria->foto)
             <img src="{{url($pria->foto)}}" style="border-radius: 10px" width="200px" height="200px">
