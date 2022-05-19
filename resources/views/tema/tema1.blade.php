@@ -35,7 +35,14 @@
 <style type="text/css">
 #particles-js {
   background-image: url("{{url($row->foto)}}");
-  width: 100%;
+  height: 100vh;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#header{
+  background-image: url("{{url($row->foto)}}");
   height: 100vh;
   background-position: top;
   background-size: cover;
@@ -58,7 +65,6 @@ body{
 @media (max-width: 780px) {
   #particles-js  {
   background-image: url("{{url($row->foto)}}");
-  width: 100%;
   height: 100vh;
   background-position: bottom;
   background-size: cover;
@@ -75,11 +81,12 @@ body{
 
   <!-- ======= Hero Section ======= -->
   <section id="header">
+    <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
   <div id="particles-js">
   </div>
-  <div class="container d-flex align-items-center justify-content-center text-center h-100">
+  <div class="container d-flex align-items-center justify-content-center text-center">
       <div class="text" >
       <p class="font-heading1"><b>The Wedding Of</b></p>
       <h1 class="mb-3 font-heading">{{$row->nama}}</h1>
@@ -87,6 +94,7 @@ body{
 <!--       <a href="about.html" class="btn btn-sm btn-success bounce mt-5">Buka undangan <i class="fa fa-arrow-down"></i></a> -->
     </div>
   </div><!-- End Hero -->
+    </div>
     </div>
     </div>
   </section>
