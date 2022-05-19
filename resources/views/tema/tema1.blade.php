@@ -97,8 +97,6 @@ body{
       </div>
 
       <div class="row">
-        
-
         <div class="col-sm-12">
             <div class="text-center pt-30">
               <p class="font-data">“Dan diantara tanda-tanda kekuasaan-Nya ialah diciptakan Nya untukmu pasangan hidup dari jenismu <br>
@@ -108,6 +106,20 @@ body{
               <img src="{{url('tema/tema1/assets/img/daun.png')}}" width="100px">
             </div>
         </div>
+
+        @if($row->ucapan_atas)
+          <div class="col-sm-12 mt-30">
+            <div class="text-center">
+              <h3 class="font-section-waktu" style="color: goldenrod">Assala mu'alaikum Wr. Wb</h3>
+            </div>
+              <div class="text-center pt-30">
+                <p class="font-data">
+                  {{$row->ucapan_atas}}
+                </p>
+                <img src="{{url('tema/tema1/assets/img/daun.png')}}" width="100px">
+              </div>
+          </div>
+        @endif
 
         <div class="col-lg-6 col-md-12">
           <div class="d-flex justify-content-center">
@@ -158,6 +170,7 @@ body{
                     <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_akad}} WIB</p>
                     <h6 class="font-waktu1 pt-10">{{$end_tanggal}}</h6>
                     
+                    @if($row->resepsi_status=='active')
                     <h6 class="font-waktu pt-10"><b>Resepsi</b></h6>
                     <img src="{{url('tema/tema1/assets/img/schedule.png')}}" width="40px" />
                     <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_resepsi}} WIB</p>
@@ -165,6 +178,8 @@ body{
                       @if($tanggal_wedding==null){{$tanggal_wedding}}<br> s/d </br>  {{$end_tanggal}} 
                       @endif
                     </h6>
+                    @endif
+
                     <img src="{{url('tema/tema1/assets/img/location.png')}}" width="40px" />
                     <p class="font-waktu1">{{{$row->alamat}}}</p>
                     @if($row->latitude && $row->longitude)
@@ -424,6 +439,31 @@ body{
 
       </div>
     </section>
+
+    @if($row->ucapan_bawah)
+    <section id="data" class="pt-50">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="text-center pt-30">
+              <p class="font-data">
+                {{$row->ucapan_bawah}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <h3 class="font-section-waktu" style="color: goldenrod">Wassala mu'alikum Wr. Wb</h3>
+        </div>
+        <div class="text-center">
+          <p class="font-section-waktu">{{$row->nama}}</p>
+          <img src="{{url('tema/tema1/assets/img/daun.png')}}" width="100px">
+        </div>
+       
+      </div>
+    </section>
+    @endif
 
 
     <!-- Modal -->
