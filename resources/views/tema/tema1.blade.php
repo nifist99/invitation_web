@@ -112,7 +112,7 @@ body{
         <div class="col-lg-6 col-md-12">
           <div class="d-flex justify-content-center">
             @if($pria->foto)
-            <img src="{{url($pria->foto)}}" width="200px" height="200px">
+            <img src="{{url($pria->foto)}}" style="border-radius: 10px" width="200px" height="200px">
             @else
             <img src="{{url('tema/tema1/assets/img/pria.png')}}" width="200px" height="200px">
             @endif
@@ -126,7 +126,7 @@ body{
          <div class="col-lg-6 col-md-12">
           <div class="d-flex justify-content-center">
           @if($wanita->foto)
-          <img src="{{url($wanita->foto)}}" width="200px" height="200px">
+          <img src="{{url($wanita->foto)}}" style="border-radius: 10px" width="200px" height="200px">
           @else
           <img src="{{url('tema/tema1/assets/img/wanita.png')}}" width="200px" height="200px">
           @endif
