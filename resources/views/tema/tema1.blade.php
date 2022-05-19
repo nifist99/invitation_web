@@ -82,7 +82,7 @@ body{
       <div class="text" >
       <p class="font-heading1"><b>The Wedding Of</b></p>
       <h1 class="mb-3 font-heading">{{$row->nama}}</h1>
-      <p class="mb-4 font-heading2">{{$tanggal_wedding}}</p>
+      <p class="mb-4 font-heading2">{{$end_tanggal}}</p>
 <!--       <a href="about.html" class="btn btn-sm btn-success bounce mt-5">Buka undangan <i class="fa fa-arrow-down"></i></a> -->
     </div>
   </div><!-- End Hero -->
@@ -158,10 +158,10 @@ body{
                     <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_akad}} WIB</p>
                     <h6 class="font-waktu1 pt-10">{{$end_tanggal}}</h6>
                     
-                    <h6 class="font-waktu pt-10"><b>Tasyakuran</b></h6>
+                    <h6 class="font-waktu pt-10"><b>Resepsi</b></h6>
                     <img src="{{url('tema/tema1/assets/img/schedule.png')}}" width="40px" />
                     <p class="font-waktu1"><i class="fa fa-clock-o"></i>&nbsp;{{$row->waktu_resepsi}} WIB</p>
-                    <h6 class="font-waktu1 pt-10">{{$tanggal_wedding}} <br> s/d </br> {{$end_tanggal}}</h6>
+                    <h6 class="font-waktu1 pt-10">@if($tanggal_wedding){{$tanggal_wedding}} @endif <br> s/d </br> {{$end_tanggal}}</h6>
                     <img src="{{url('tema/tema1/assets/img/location.png')}}" width="40px" />
                     <p class="font-waktu1">{{{$row->alamat}}}</p>
                     @if($row->latitude && $row->longitude)
