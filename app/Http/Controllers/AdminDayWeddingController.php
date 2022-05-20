@@ -111,7 +111,7 @@
 			$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'textarea','validation'=>'required|string|min:1|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Latitude','name'=>'latitude','type'=>'text','validation'=>'|string|min:1|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Longitude','name'=>'longitude','type'=>'text','validation'=>'|string|min:1|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Tanggal Pernikahan','name'=>'tanggal','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggal Pernikahan','name'=>'tanggal','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Berakhir','name'=>'end_tanggal','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Hp','name'=>'hp','type'=>'number','validation'=>'|numeric','width'=>'col-sm-10','placeholder'=>'You can only enter the number only'];
 			$this->form[] = ['label'=>'Waktu Akad','name'=>'waktu_akad','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
