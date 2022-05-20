@@ -8,8 +8,15 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Favicons -->
-        <link href="{{CRUDBooster::getSetting('favicon')}}" rel="icon">
-        <link href="{{CRUDBooster::getSetting('favicon')}}" rel="apple-touch-icon">
+        @if($row->favicon)
+        <link href="{{url($row->favicon)}}" rel="icon">
+        <link href="{{url($row->favicon)}}" rel="apple-touch-icon">
+        @else
+        <link href="{{url(CRUDBooster::getSetting('favicon'))}}" rel="icon">
+        <link href="{{url(CRUDBooster::getSetting('favicon'))}}" rel="apple-touch-icon">
+        @endif
+
+
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Dancing+Script:wght@600&family=Handlee&family=Indie+Flower&family=Itim&family=Poppins:wght@200&family=Rubik:wght@600&family=Tangerine&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 

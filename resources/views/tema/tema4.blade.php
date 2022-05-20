@@ -10,8 +10,14 @@
   <title>{{$row->nama}}</title>
 
   <!-- Favicons -->
+  @if($row->favicon)
+  <link href="{{url($row->favicon)}}" rel="icon">
+  <link href="{{url($row->favicon)}}" rel="apple-touch-icon">
+  @else
   <link href="{{url(CRUDBooster::getSetting('favicon'))}}" rel="icon">
   <link href="{{url(CRUDBooster::getSetting('favicon'))}}" rel="apple-touch-icon">
+  @endif
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
