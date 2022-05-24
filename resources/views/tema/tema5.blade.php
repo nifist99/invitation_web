@@ -405,8 +405,10 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
     <section id="hadiah" class="pt-50">
         <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
-          <p class="font-galeri">Kirim Hadiah</p>
-          <p class="font-hadiah" style="color: black">Silahkan klik disini untuk memberikan hadiah ke pengantin :)</p>
+          <p class="font-galeri">Wedding Gift</p>
+          <p class="font-hadiah" style="color: black">
+            Bagi keluarga dan sahabat yang ingin mengirimkan hadiah silahkan mengirimkanya melalui tautan berikut :
+        </p>
         </div>
 
         <div class="row">
@@ -414,8 +416,8 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
           <!--<button type="button" onclick="book()" class="btn btn-lg btn-font">Kirim Amplop Undangan</button>-->
           <button type="button" class="btn btn-lg btn-font" data-bs-toggle="modal" data-bs-target="#exampleModal">Kirim Amplop</button>
         </div>
-        <div class="col-sm-12 d-flex justify-content-center">
-            <img src="{{url('tema/tema1/assets/img/giftcard.png')}}" width="50%" height="auto">
+        <div class="col-sm-12 d-flex justify-content-center mt-20">
+            <img src="{{url('web/assets/img/gift.png')}}" width="50%" height="auto">
           </div>
         </div>
 
@@ -474,7 +476,11 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
       <div class="section-title text-center">
         <img src="{{url('tema/tema1/assets/img/daun.png')}}" width="100px">
         <h2 class="font-section-galeri">Guest Book</h2>
-        <p class="font-galeri">Buku Tamu</p>
+        <p class="font-hadiah" style="color: white">
+            Kami tidak sabar menunggu hari pernikahan kami bersama
+            Bapak/Ibu/Saudara/i, mohon konfirmasi kehadiran Bapak/Ibu/i.
+            Terimakasih
+        </p>
       </div>
 
       <div class="row">
