@@ -174,7 +174,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
             @if($k->posisi=='left')
             <div class="container-timeline left">
               <div class="content">
-                <h4 class="font-waktu">{{Daymahar::tanggal_indo($k->date)}}</h4>
+                <h4 class="font-story">{{Daymahar::tanggal_indo($k->date)}}</h4>
                 <p class="font-timeline">{{$k->content}}</p>
               </div>
             </div>
@@ -182,7 +182,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
 
             <div class="container-timeline right">
               <div class="content">
-                <h4 class="font-waktu">{{Daymahar::tanggal_indo($k->date)}}</h4>
+                <h4 class="font-story">{{Daymahar::tanggal_indo($k->date)}}</h4>
                 <p class="font-timeline">{{$k->content}}</p>
               </div>
             </div>
@@ -210,7 +210,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
         @if($row->ucapan_atas)
           <div class="col-sm-12 mt-30">
             <div class="text-center">
-              <h3 class="font-section-waktu">Assala mu'alaikum Wr. Wb</h3>
+              <h3 class="font-salam">Assala mu'alaikum Wr. Wb</h3>
             </div>
               <div class="text-center pt-30">
                 <p class="font-data">
@@ -405,7 +405,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
     <section id="hadiah" class="pt-50">
         <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
-          <p class="font-galeri">Wedding Gift</p>
+          <p class="font-gift">Wedding Gift</p>
           <p class="font-hadiah" style="color: black">
             Bagi keluarga dan sahabat yang ingin mengirimkan hadiah silahkan mengirimkanya melalui tautan berikut :
         </p>
@@ -542,10 +542,10 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
         </div>
 
         <div class="text-center">
-          <h3 class="font-section-waktu">Wassala mu'alikum Wr. Wb</h3>
+          <h3 class="font-salam">Wassala mu'alikum Wr. Wb</h3>
         </div>
         <div class="text-center">
-          <p class="font-section-waktu">{{$row->nama}}</p>
+          <p class="font-salam">{{$row->nama}}</p>
           <img src="{{url('tema/tema1/assets/img/daun.png')}}" width="100px">
         </div>
        

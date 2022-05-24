@@ -446,7 +446,7 @@ font-style: italic;
       }
 
 .font-data1{
-color: #ffc107;
+color: #000000;
 font-family: "Tangerine", Sans-serif;
 font-size: 40px;
 font-weight: bold;
@@ -469,18 +469,32 @@ font-size: 20px;
 /*font section 2*/
 
 .font-section-waktu{
-color: #000000;
+color: #ffffff;
 font-family: "Cormorant Garamond", Sans-serif;
 font-size: 30px;
 font-weight: bold;
 font-style: italic;
 }
 
+.font-salam{
+  color: #000000;
+  font-family: "Cormorant Garamond", Sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  }
+
 .font-waktu{
-color: #ffc107;
+color: #ffffff;
 font-family: "Tangerine", Sans-serif;
 font-size: 45px;
 }
+
+.font-story{
+  color: #000000;
+  font-family: "Tangerine", Sans-serif;
+  font-size: 45px;
+  }
 
 .font-waktu1{
 font-family: "Poppins", Sans-serif;
@@ -536,7 +550,14 @@ font-style: italic;
 }
 
 .font-galeri{
-  color: #ffc107;
+  color: #ffffff;
+font-family: "Tangerine", Sans-serif;
+font-size: 70px;
+font-weight: bold;
+}
+
+.font-gift{
+  color: #000000;
 font-family: "Tangerine", Sans-serif;
 font-size: 70px;
 font-weight: bold;
