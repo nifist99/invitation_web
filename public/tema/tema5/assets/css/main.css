@@ -607,7 +607,7 @@ margin-bottom: 30px;
 }
 
 .font-heading{
-font-size:72px;
+font-size:40px;
 }
 
 .font-section{
@@ -615,6 +615,7 @@ font-size: 36px;
 
 }
 .text {
+top:20%;
 padding: 0em 0em;
 }
 
@@ -717,7 +718,7 @@ font-size: 42px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 748px) {
   /* Place the timelime to the left */
   .timeline::after {
   left: 31px;
@@ -747,4 +748,20 @@ font-size: 42px;
   .right {
   left: 0%;
   }
+
+  .text {
+    top: 20%;
+    }
+
+ 
+  .font-heading {
+      font-size: 40px;
+      }
+  .font-heading1 {
+        line-height: 0;
+        }
+
+  .font-heading2 {
+          line-height: 0;
+          }
 }
