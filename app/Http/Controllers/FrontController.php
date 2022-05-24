@@ -77,6 +77,16 @@ class FrontController extends Controller
                         ->where('status','active')
                         ->get();
 
+        $data['back'] =  DB::table('day_wedding_foto')
+                        ->where('nama','background_satu')
+                        ->first();
+
+        $data['back2'] =  DB::table('day_wedding_foto')
+                        ->where('nama','background_dua')
+                        ->first();
+
+                 
+
         // $date            = date_create($data['row']->tanggal);
         // $date_end            = date_create($data['row']->end_tanggal);
 
