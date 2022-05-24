@@ -480,7 +480,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
                 </div>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="pesan" rows="5" placeholder="Masukan Pesan" required></textarea>
+                <textarea class="form-control" id="pesan" name="pesan" rows="5" placeholder="Masukan Pesan" required></textarea>
               </div>
               <br>
               <div class="col-md-12 form-group">

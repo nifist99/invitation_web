@@ -488,7 +488,10 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
           <div id="komentar" class="form-book">
             @foreach($pesan as $pes)
             <div>
-              <p class="font-book1">{{$pes->nama}}</p>
+              <p class="font-book1">{{$pes->nama}}&nbsp;
+                @if($pes->kehadiran)
+                <span>({{$pes->kehadiran}})</span>
+                @endif</p>
               <p class="font-book">{{$pes->pesan}}</p>
               <hr style="border: 1px solid black!important">
             </div>
@@ -508,8 +511,12 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
                   <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukan Nama" required>
                 </div>
               </div>
+              <select class="form-select mt-10" aria-label="Kehadiran" name="kehadiran" id="kehadiran" required>
+                <option value="hadir">hadir</option>
+                <option value="tidak hadir">tidak hadir</option>
+              </select>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="pesan" rows="5" placeholder="Masukan Pesan" required></textarea>
+                <textarea class="form-control" id="pesan" name="pesan" rows="5" placeholder="Masukan Pesan" required></textarea>
               </div>
               <br>
               <div class="col-md-12 form-group">
@@ -731,7 +738,8 @@ $(function () {
         $(this).html('Sending..');
 
         var nama     = $('#nama').val();
-                var pesan    = $('#pesan').val();
+        var pesan    = $('#pesan').val();
+        var kehadiran    = $('#kehadiran').val();
 
                 if(nama==''||pesan==''){
                     $('#daftar').trigger("reset");
@@ -752,7 +760,7 @@ $(function () {
           dataType: 'json',
           success: function (data) {
             var post='<div>';
-            post +='<p class="font-book1">'+data.nama+'</p>';
+            post +='<p class="font-book1">'+data.nama+'('+data.kehadiran+')'+'</p>';
             post +='<p class="font-book">'+data.pesan+'</p>';
             post +='</div>';
             

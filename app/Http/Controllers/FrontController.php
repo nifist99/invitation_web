@@ -146,6 +146,7 @@ class FrontController extends Controller
         $data['id_day_wedding']     =$request->id_day_wedding;
         $data['pesan']              =$request->pesan;
         $data['nama']               =$request->nama;
+        $data['kehadiran']          =$request->kehadiran;
         $data['status']             ='active';
         $data['created_at']         =date('Y-m-d');
 
