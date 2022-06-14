@@ -244,10 +244,10 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
   @endif
 
   <section id="couple" class="pt-50">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <div class="row">
         @if($row->ucapan_atas)
-          <div class="col-sm-12 mt-30">
+          <div class="col-sm-12 mt-30"  data-aos="fade-up">
             <div class="text-center">
               <h3 class="font-salam">Assala mu'alaikum Wr. Wb</h3>
             </div>
@@ -260,7 +260,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
           </div>
         @endif
 
-        <div class="col-md-6 col-sm-12 mt-20">
+        <div class="col-md-6 col-sm-12 mt-20"  data-aos="fade-right">
           <div class="d-flex justify-content-center">
             @if($pria->foto)
                 <img src="{{url($pria->foto)}}" width="200px" height="200px">
@@ -274,7 +274,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
         </div>
         </div>
 
-         <div class="col-lg-6 col-md-12">
+         <div class="col-lg-6 col-md-12"  data-aos="fade-left">
             <div class="d-flex justify-content-center">
             @if($wanita->foto)
                 <img src="{{url($wanita->foto)}}" width="200px" height="200px">
