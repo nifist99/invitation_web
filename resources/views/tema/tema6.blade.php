@@ -56,7 +56,7 @@
 }
 
 #img-section{
-  background-image: url("{{url($row->foto)}}");
+  background-image: url("{{url($back3->foto)}}");
   height: 100vh;
   background-position: center;
   background-size:cover ;

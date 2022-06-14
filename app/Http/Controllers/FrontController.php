@@ -86,6 +86,10 @@ class FrontController extends Controller
                         ->where('id_day_wedding',$data['row']->id)
                         ->where('nama','background_dua')
                         ->first();
+        $data['back3'] =  DB::table('day_wedding_foto')
+                        ->where('id_day_wedding',$data['row']->id)
+                        ->where('nama','background_tiga')
+                        ->first();
 
                  
 
