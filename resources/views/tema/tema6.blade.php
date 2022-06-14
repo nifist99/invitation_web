@@ -148,9 +148,9 @@ body{
   </div>
   <div class="container d-flex align-items-center justify-content-center text-center" id="home">
       <div class="text" >
-      <p class="font-heading1"><b>The Wedding Of</b></p>
-      <h1 class="mb-3 font-heading">{{$row->nama}}</h1>
-      <p class="mb-4 font-heading2">{{$end_tanggal}}</p>
+      <p class="font-heading1" style="color: black!important;"><b>The Wedding Of</b></p>
+      <h1 class="mb-3 font-heading" style="color: black!important;">{{$row->nama}}</h1>
+      <p class="mb-4 font-heading2" style="color: black!important;">{{$end_tanggal}}</p>
     </div>
   </div><!-- End Hero -->
     </div>
@@ -260,29 +260,29 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
           </div>
         @endif
 
-        <div class="col-md-6 col-sm-12 mt-20"  data-aos="fade-right">
+        <div class="col-md-6 col-sm-12 mt-20" >
           <div class="d-flex justify-content-center">
             @if($pria->foto)
-                <img src="{{url($pria->foto)}}" width="200px" height="200px">
+                <img src="{{url($pria->foto)}}" width="200px" height="200px" data-aos="fade-right">
             @else
                 <img src="{{url('tema/tema1/assets/img/pria.png')}}" class="card-foto3">
             @endif
           </div>
-          <div class="text-center mt-10">
+          <div class="text-center mt-10" data-aos="fade-right">
                 <p class="font-data1">{{$pria->nama}}</p>
                 <p class="font-data2">Putra dari pasangan <br> {{$pria->nama_ortu}}</p>
         </div>
         </div>
 
-         <div class="col-lg-6 col-md-12"  data-aos="fade-left">
+         <div class="col-lg-6 col-md-12">
             <div class="d-flex justify-content-center">
             @if($wanita->foto)
-                <img src="{{url($wanita->foto)}}" width="200px" height="200px">
+                <img src="{{url($wanita->foto)}}" width="200px" height="200px" data-aos="fade-left">
             @else
                 <img src="{{url('tema/tema1/assets/img/wanita.png')}}" class="card-foto3">
             @endif
             </div>
-                    <div class="text-center mt-10">
+                    <div class="text-center mt-10" data-aos="fade-left">
                 <p class="font-data1">{{$wanita->nama}}</p>
                 <p class="font-data2">Putri dari pasangan <br> {{$wanita->nama_ortu}}</p>
             </div>
@@ -754,7 +754,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
         imageWidth: 200,
         imageHeight: 100,
         imageAlt: 'Custom image',
-        confirmButtonColor: '#B8803A',
+        confirmButtonColor: '#1363DF',
       })
   }
   </script>

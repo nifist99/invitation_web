@@ -154,7 +154,7 @@ background-color: #fff;
 #footer{
   height: 100px;
   width: 100%;
-  background-color: goldenrod;
+  background-color: #1363DF;
   }
 
 .form-book{
@@ -366,7 +366,7 @@ border-radius: 20px;
   font-family: "Cormorant Garamond", Sans-serif;
 font-size: 20px;
 font-weight: bold;
-background-color: #ffc107;
+background-color: #1363DF;
 color: white;
 }
 /*font heading*/
