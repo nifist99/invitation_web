@@ -263,7 +263,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
         <div class="col-md-6 col-sm-12 mt-20">
           <div class="d-flex justify-content-center">
             @if($pria->foto)
-                <img src="{{url($pria->foto)}}" class="card-foto3">
+                <img src="{{url($pria->foto)}}" width="200px" height="200px">
             @else
                 <img src="{{url('tema/tema1/assets/img/pria.png')}}" class="card-foto3">
             @endif
@@ -277,7 +277,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
          <div class="col-lg-6 col-md-12">
             <div class="d-flex justify-content-center">
             @if($wanita->foto)
-                <img src="{{url($wanita->foto)}}" class="card-foto3">
+                <img src="{{url($wanita->foto)}}" width="200px" height="200px">
             @else
                 <img src="{{url('tema/tema1/assets/img/wanita.png')}}" class="card-foto3">
             @endif
