@@ -244,10 +244,10 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
   @endif
 
   <section id="couple" class="pt-50">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
         <div class="row">
         @if($row->ucapan_atas)
-          <div class="col-sm-12 mt-30"  data-aos="fade-up">
+          <div class="col-sm-12 mt-30">
             <div class="text-center">
               <h3 class="font-salam">Assala mu'alaikum Wr. Wb</h3>
             </div>
@@ -263,12 +263,12 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
         <div class="col-md-6 col-sm-12 mt-20" >
           <div class="d-flex justify-content-center">
             @if($pria->foto)
-                <img src="{{url($pria->foto)}}" width="200px" height="200px" data-aos="fade-right">
+                <img src="{{url($pria->foto)}}" width="200px" height="200px">
             @else
                 <img src="{{url('tema/tema1/assets/img/pria.png')}}" class="card-foto3">
             @endif
           </div>
-          <div class="text-center mt-10" data-aos="fade-right">
+          <div class="text-center mt-10">
                 <p class="font-data1">{{$pria->nama}}</p>
                 <p class="font-data2">Putra dari pasangan <br> {{$pria->nama_ortu}}</p>
         </div>
@@ -277,12 +277,12 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
          <div class="col-lg-6 col-md-12">
             <div class="d-flex justify-content-center">
             @if($wanita->foto)
-                <img src="{{url($wanita->foto)}}" width="200px" height="200px" data-aos="fade-left">
+                <img src="{{url($wanita->foto)}}" width="200px" height="200px">
             @else
                 <img src="{{url('tema/tema1/assets/img/wanita.png')}}" class="card-foto3">
             @endif
             </div>
-                    <div class="text-center mt-10" data-aos="fade-left">
+                    <div class="text-center mt-10">
                 <p class="font-data1">{{$wanita->nama}}</p>
                 <p class="font-data2">Putri dari pasangan <br> {{$wanita->nama_ortu}}</p>
             </div>
