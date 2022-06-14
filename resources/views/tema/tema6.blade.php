@@ -34,7 +34,7 @@
 
   <!-- Template Main CSS File -->
 
-  <link href="{{url('tema/tema5/assets/css/main.css')}}" rel="stylesheet">
+  <link href="{{url('tema/tema6/css/main.css')}}" rel="stylesheet">
    <link href="{{url('tema/tema1/assets/css/sweetalert2.min.css')}}" rel="stylesheet">
 
 
@@ -243,7 +243,7 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
   </section>
   @endif
 
-  <section id="data" class="pt-50">
+  <section id="couple" class="pt-50">
     <div class="container" data-aos="fade-up">
         <div class="row">
         @if($row->ucapan_atas)
@@ -602,53 +602,70 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
 
   </footer><!-- End  Footer -->
 
-  {{-- <div class="fixed-bottom">
-    <button class="btn btn-sm music" onclick="myFunction()"><i id="icon_play" class="fa fa-play"></i></button>
-    <span id="name_music"></span>
-  </div>
 
-   <audio src="{{url($row->url_music)}}" id="my_audio" loop="loop"></audio> --}}
+   <audio src="{{url($row->url_music)}}" id="my_audio" loop="loop"></audio>
 
 
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <nav class="nav" id="mainnav">
-  <a href="#home" class="nav__link" class="awesome-tooltip">
+  <a href="javascript:void(0)" onclick="home()" class="nav__link" class="awesome-tooltip">
     <i class="material-icons nav__icon">home</i>
     <span class="nav__text">Home</span>
   </a>
-  <a href="#" class="nav__link nav__link--active">
+  <a href="javascript:void(0)" onclick="couple()" class="nav__link">
     <i class="material-icons nav__icon">group</i>
     <span class="nav__text">Couple</span>
   </a>
-  <a href="#" class="nav__link">
+  <a href="javascript:void(0)" onclick="waktu()" class="nav__link">
     <i class="material-icons nav__icon">event</i>
     <span class="nav__text">Event</span>
   </a>
-  <a href="#" class="nav__link">
+  <a href="javascript:void(0)" onclick="galery()" class="nav__link">
     <i class="material-icons nav__icon">photo</i>
     <span class="nav__text">Gallery</span>
   </a>
-  <a href="#" class="nav__link">
-    <i class="material-icons nav__icon">email</i>
-    <span class="nav__text">Wishes</span>
+  <a href="javascript:void(0)" onclick="myFunction()" class="nav__link nav__link--active">
+    <i id="icon_play" class="fa fa-play"></i>
+    <span class="nav__text">Music</span>
   </a>
 </nav>
 
   <!-- Vendor JS Files -->
   <script src="{{url('tema/tema1/assets/vendor/aos/aos.js')}}"></script>
-   <script src="{{url('tema/tema1/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-   <script src="{{url('tema/tema1/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-   <script src="{{url('tema/tema1/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url('tema/tema1/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+  <script src="{{url('tema/tema1/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url('tema/tema1/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
   <script src="{{url('tema/tema1/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-  {{-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> --}}
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <!-- Template Main JS File -->
   <script src="{{url('tema/tema1/assets/js/main.js')}}"></script>
-   <script src="{{url('tema/tema5/assets/js/particles.js')}}"></script>
+  <script src="{{url('tema/tema5/assets/js/particles.js')}}"></script>
   <script src="{{url('tema/tema5/assets/js/custom.js')}}"></script>
   <script src="{{url('tema/tema1/assets/js/sweetalert2.min.js')}}"></script>
-  {{-- <script src="{{url('tema/tema1/assets/js/jquery.min.js')}}"></script> --}}
+
+  <script>
+    function home() {
+      const home = document.getElementById("header");
+      home.scrollIntoView();
+    }
+
+    function couple() {
+      const couple = document.getElementById("couple");
+      couple.scrollIntoView();
+    }
+
+    function waktu() {
+      const waktu = document.getElementById("waktu");
+      waktu.scrollIntoView();
+    }
+
+    function galery() {
+      const galery = document.getElementById("portfolio");
+      galery.scrollIntoView();
+    }
+  </script>
 
   <script type="text/javascript">
     var music = document.getElementById("my_audio"); 
@@ -681,13 +698,12 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
                                   music.play(); 
               }
             })
-     
     </script>
      @else
 
   <script type="text/javascript">
   
-document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", function(){
 
     const swalimg = Swal.mixin({
         customClass: {
@@ -760,7 +776,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <script>
 // Mengatur waktu akhir perhitungan mundur
-var countDownDate = new Date("May 27, 2022 08:00:00").getTime();
+var countDownDate = new Date("July 03, 2022 08:00:00").getTime();
 
 // Memperbarui hitungan mundur setiap 1 detik
 var x = setInterval(function() {
