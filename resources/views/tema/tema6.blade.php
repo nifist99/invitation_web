@@ -614,10 +614,10 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
     <i class="material-icons nav__icon">home</i>
     <span class="nav__text">Home</span>
   </a>
-  <a href="javascript:void(0)" onclick="couple()" class="nav__link">
+  {{-- <a href="javascript:void(0)" onclick="couple()" class="nav__link">
     <i class="material-icons nav__icon">group</i>
     <span class="nav__text">Couple</span>
-  </a>
+  </a> --}}
   <a href="javascript:void(0)" onclick="waktu()" class="nav__link">
     <i class="material-icons nav__icon">event</i>
     <span class="nav__text">Event</span>
@@ -625,6 +625,10 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
   <a href="javascript:void(0)" onclick="galery()" class="nav__link">
     <i class="material-icons nav__icon">photo</i>
     <span class="nav__text">Gallery</span>
+  </a>
+  <a href="javascript:void(0)" onclick="books()" class="nav__link">
+    <i class="material-icons nav__icon">book</i>
+    <span class="nav__text">Books Guest</span>
   </a>
   <a href="javascript:void(0)" onclick="myFunction()" class="nav__link nav__link--active">
     <i id="icon_play" class="fa fa-play"></i>
@@ -653,9 +657,9 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
       home.scrollIntoView();
     }
 
-    function couple() {
-      const couple = document.getElementById("couple");
-      couple.scrollIntoView();
+    function books() {
+      const books = document.getElementById("book");
+      books.scrollIntoView();
     }
 
     function waktu() {

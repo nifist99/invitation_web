@@ -372,7 +372,7 @@ color: white;
 /*font heading*/
 
 .font-heading{
-color: #FFFFFF;
+color: #000000;
 font-family: 'Tangerine', cursive;    
 font-size: 100px;
 font-weight: bold;
@@ -380,7 +380,7 @@ line-height: 1.5em;
 }
 
 .font-heading1{
-color: #FFFFFF;
+color: #000000;
 font-family: 'Cormorant Garamond', serif;
 font-size: 25px;
 font-weight: bold;
@@ -389,7 +389,7 @@ line-height: 1.5em;
 }
 
 .font-heading2{
-color: #FFFFFF;
+color: #000000;
 font-family: "Cormorant Garamond", Sans-serif;
 font-size: 25px;
 font-style: italic;
