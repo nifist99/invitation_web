@@ -63,7 +63,7 @@
   background-repeat: no-repeat;
 }
 .img-back-waktu{
-  background-image: url("{{url($row->foto)}}");
+  background-image: url("{{url($back2->foto)}}");
   height: auto;
   background-position: top;
   background-size: cover;
