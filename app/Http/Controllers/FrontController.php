@@ -78,10 +78,12 @@ class FrontController extends Controller
                         ->get();
 
         $data['back'] =  DB::table('day_wedding_foto')
+                        ->where('id_day_wedding',$data['row']->id)
                         ->where('nama','background_satu')
                         ->first();
 
         $data['back2'] =  DB::table('day_wedding_foto')
+                        ->where('id_day_wedding',$data['row']->id)
                         ->where('nama','background_dua')
                         ->first();
 

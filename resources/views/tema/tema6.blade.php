@@ -602,6 +602,8 @@ $kisah=DB::table('day_story')->where('id_cms_users',$row->id_users)->get();
 
   </footer><!-- End  Footer -->
 
+  <div class="mt-20"></div>
+
 
    <audio src="{{url($row->url_music)}}" id="my_audio" loop="loop"></audio>
 
