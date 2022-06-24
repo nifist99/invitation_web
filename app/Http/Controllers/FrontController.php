@@ -79,16 +79,16 @@ class FrontController extends Controller
 
         $data['back'] =  DB::table('day_wedding_foto')
                         ->where('id_day_wedding',$data['row']->id)
-                        ->where('nama','background_satu')
+                        ->where('catatan','background_satu')
                         ->first();
 
         $data['back2'] =  DB::table('day_wedding_foto')
                         ->where('id_day_wedding',$data['row']->id)
-                        ->where('nama','background_dua')
+                        ->where('catatan','background_dua')
                         ->first();
         $data['back3'] =  DB::table('day_wedding_foto')
                         ->where('id_day_wedding',$data['row']->id)
-                        ->where('nama','background_tiga')
+                        ->where('catatan','background_tiga')
                         ->first();
 
                  
